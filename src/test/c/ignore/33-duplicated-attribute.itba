@@ -1,0 +1,14 @@
+// Un atributo no puede repetirse (salvo las transformaciones).
+scene "a" {
+	camera main at (0, 2, 5) {
+		look_at (0, 0, 0)
+		fov 60deg
+	}
+	material m { color #ffffff shininess 1 }
+	mesh s : sphere at (0, 0, 0) {
+		radius 1
+		radius 2
+		material m
+	}
+	render (640, 480) to "x.html"
+}

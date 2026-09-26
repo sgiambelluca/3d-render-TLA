@@ -1,0 +1,25 @@
+// Referencias a entidades, a su posición, a sus atributos y a sus componentes.
+scene "referencias" {
+	camera main at base.pos + (0, 2, 5) {
+		look_at base
+		fov 60deg
+	}
+	light foco : point at base.pos + (0, base.size.y * 3, 0) {
+		color #ffffff
+		intensity 0.5
+	}
+	material m { color #ffffff shininess 8 }
+	mesh base : box at (0, 0.5, 0) {
+		size (2, 1, 2)
+		material m
+	}
+	mesh bola : sphere at base.pos + (0, base.size.y / 2 + bola.radius, 0) {
+		radius base.size.x / 4
+		material m
+	}
+	mesh satelite : sphere at bola.pos + (bola.radius * 2, 0, 0) {
+		radius bola.radius / 2
+		material m
+	}
+	render (640, 480) to "referencias.html"
+}

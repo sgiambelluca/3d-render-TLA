@@ -1,0 +1,8 @@
+// 5.2 (VIII): suma de un color con una posición.
+scene "a" {
+	camera main at (0, 2, 5) + #ff0000 {
+		look_at (0, 0, 0)
+		fov 60deg
+	}
+	render (640, 480) to "x.html"
+}

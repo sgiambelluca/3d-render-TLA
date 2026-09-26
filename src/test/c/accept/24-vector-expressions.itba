@@ -1,0 +1,18 @@
+// Vectores de 2 y 3 componentes, y operaciones entre vectores y escalares.
+scene "vectores" {
+	camera main at (0, 2, 5) * 2 - (0, 1, 0) {
+		look_at (1, 1, 1) / 2
+		fov 60deg
+	}
+	material m { color #ffffff shininess 8 }
+	mesh piso : plane at (0, 0, 0) {
+		size (4, 4) * 2 + (1, 1)
+		material m
+	}
+	mesh caja : box at (piso.pos + (0, 1, 0)) * 1 {
+		size (1 + 1, 2 * 0.5, piso.size.y / 8)
+		material m
+		scale (1, 1, 1) * 1.5
+	}
+	render (320, 240) * 2 to "vectores.html"
+}

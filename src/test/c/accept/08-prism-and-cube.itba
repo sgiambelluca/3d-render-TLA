@@ -1,0 +1,17 @@
+// (VIII) Un prisma de base rectangular y un cubo (con una única dimensión).
+scene "prisma_y_cubo" {
+	camera main at (0, 3, 8) {
+		look_at (0, 0, 0)
+		fov 60deg
+	}
+	material roble { color #a0522d shininess 4 }
+	mesh prisma : box at (-2, 0.5, 0) {
+		size (3, 1, 0.5)
+		material roble
+	}
+	mesh cubo : box at (2, 1, 0) {
+		size 2
+		material roble
+	}
+	render (640, 480) to "prismas.html"
+}

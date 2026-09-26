@@ -1,0 +1,13 @@
+// Colores hexadecimales de 6 y 8 dígitos, en minúsculas y mayúsculas.
+scene "colores" {
+	camera main at (0, 2, 5) {
+		look_at (0, 0, 0)
+		fov 60deg
+	}
+	light a : directional { direction (0, -1, 0) color #FFFFFF intensity 0.5 }
+	light b : directional { direction (1, -1, 0) color #aAbBcC intensity 0.5 }
+	material opaco { color #0a1B2c shininess 1 }
+	material transparente { color #00000000 shininess 1 }
+	material casi_opaco { color #123456FE shininess 1 }
+	render (640, 480) to "colores.html"
+}

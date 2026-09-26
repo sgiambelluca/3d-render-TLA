@@ -1,0 +1,9 @@
+// (I) Escena mínima: solo una cámara y la configuración de renderizado.
+scene "vacia" {
+	camera main at (0, 2, 5) {
+		look_at (0, 0, 0)
+		fov 60deg
+	}
+
+	render (800, 600) to "frame.html"
+}

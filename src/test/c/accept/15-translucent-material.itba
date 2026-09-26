@@ -1,0 +1,13 @@
+// (XV) Material con un color semitransparente (canal alpha).
+scene "translucido" {
+	camera main at (0, 1, 4) {
+		look_at (0, 0, 0)
+		fov 60deg
+	}
+	material vidrio { color #aee4ff80 shininess 128 }
+	mesh burbuja : sphere at (0, 0.5, 0) {
+		radius 0.5
+		material vidrio
+	}
+	render (640, 480) to "translucido.html"
+}

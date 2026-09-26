@@ -1,0 +1,21 @@
+// (V) Múltiples luces dentro de la misma escena.
+scene "muchas_luces" {
+	camera main at (0, 2, 5) {
+		look_at (0, 0, 0)
+		fov 60deg
+	}
+	light sol : directional {
+		direction (0, -1, 0)
+		color #fff4e0
+		intensity 0.6
+	}
+	light relleno : point at (-3, 2, 2) {
+		color #88aaff
+		intensity 0.3
+	}
+	light contra : point at (3, 2, -2) {
+		color #ff8844
+		intensity 0.5
+	}
+	render (640, 480) to "luces.html"
+}

@@ -1,0 +1,14 @@
+// Ángulos enteros y decimales con el sufijo deg.
+scene "angulos" {
+	camera main at (0, 2, 5) {
+		look_at (0, 0, 0)
+		fov 0.5deg * 120
+	}
+	material m { color #ffffff shininess 1 }
+	mesh pared : plane at (0, 1, -2) {
+		size (4, 2)
+		material m
+		rotate (90deg, 0deg, 22.5deg)
+	}
+	render (640, 480) to "angulos.html"
+}

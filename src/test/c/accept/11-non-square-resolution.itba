@@ -1,0 +1,8 @@
+// (XI) Resolución de salida rectangular no cuadrada (1920 x 1080).
+scene "full_hd" {
+	camera main at (0, 2, 5) {
+		look_at (0, 0, 0)
+		fov 60deg
+	}
+	render (1920, 1080) to "full_hd.html"
+}

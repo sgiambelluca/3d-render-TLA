@@ -1,0 +1,8 @@
+// 5.2 (IV): campo de visión fuera de (0°, 180°).
+scene "a" {
+	camera main at (0, 2, 5) {
+		look_at (0, 0, 0)
+		fov 200deg
+	}
+	render (640, 480) to "x.html"
+}

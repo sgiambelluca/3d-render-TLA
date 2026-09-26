@@ -1,0 +1,13 @@
+// (X) Material con brillo especular nulo (completamente mate).
+scene "mate" {
+	camera main at (0, 1, 4) {
+		look_at (0, 0, 0)
+		fov 60deg
+	}
+	material tiza { color #f5f5f5 shininess 0 }
+	mesh bola : sphere at (0, 0.5, 0) {
+		radius 0.5
+		material tiza
+	}
+	render (640, 480) to "mate.html"
+}

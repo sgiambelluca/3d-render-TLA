@@ -1,0 +1,21 @@
+// (II) Escena completa: cámara, luz direccional, material y un bloque que lo utiliza.
+scene "completa" {
+	camera main at (0, 3, 6) {
+		look_at (0, 0, 0)
+		fov 45deg
+	}
+	light sol : directional {
+		direction (-1, -2, -1)
+		color #ffffff
+		intensity 0.9
+	}
+	material madera {
+		color #8b5a2b
+		shininess 8
+	}
+	mesh caja : box at (0, 0.5, 0) {
+		size (1, 1, 1)
+		material madera
+	}
+	render (640, 480) to "completa.html"
+}

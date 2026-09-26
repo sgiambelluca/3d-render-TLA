@@ -1,0 +1,8 @@
+// El nombre del archivo de salida es una cadena arbitraria.
+scene "Una escena con espacios y s1mbolos: _-.,;!" {
+	camera main at (0, 2, 5) {
+		look_at (0, 0, 0)
+		fov 60deg
+	}
+	render (640, 480) to "salidas/mi escena (v2).html"
+}

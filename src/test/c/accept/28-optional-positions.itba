@@ -1,0 +1,18 @@
+// La posición (at) es opcional en luces direccionales y en mallas.
+scene "sin_posicion" {
+	camera main at (0, 2, 5) {
+		look_at centro
+		fov 60deg
+	}
+	light sol : directional {
+		direction (0, -1, 0)
+		color #ffffff
+		intensity 1
+	}
+	material m { color #ffffff shininess 1 }
+	mesh centro : sphere {
+		radius 1
+		material m
+	}
+	render (640, 480) to "sin_posicion.html"
+}

@@ -1,0 +1,24 @@
+// Menos unario sobre escalares, ángulos, vectores, referencias y subexpresiones.
+scene "menos_unario" {
+	camera main at -(0, -2, -5) {
+		look_at (-1, -0.5, - 2)
+		fov 60deg
+	}
+	light sol : directional {
+		direction -(1, 1, 1) * 2
+		color #ffffff
+		intensity 1 - -0.5 - 0.5
+	}
+	material m { color #cccccc shininess 4 }
+	mesh a : box at (-3, 0.5, 0) {
+		size 1
+		material m
+		rotate (-15deg, -(45deg), 0)
+	}
+	mesh b : box at -a.pos + (0, 1, 0) {
+		size 1
+		material m
+		translate (-a.size.x, 0, 0)
+	}
+	render (640, 480) to "menos.html"
+}

@@ -1,0 +1,6 @@
+scene "a" {
+	camera at (0, 2, 5) {
+		fov 60deg
+	}
+	render (640, 480) to "x.html"
+}

@@ -1,0 +1,17 @@
+// 5.2 (VI): dependencia cíclica entre posiciones (Cód. 6.4).
+scene "ciclo" {
+	camera main at (0, 2, 5) {
+		look_at a
+		fov 60deg
+	}
+	material gris { color #888888 shininess 0 }
+	mesh a : sphere at b.pos + (1, 0, 0) {  // depende de b
+		radius 0.5
+		material gris
+	}
+	mesh b : sphere at a.pos - (1, 0, 0) {  // depende de a: ciclo
+		radius 0.5
+		material gris
+	}
+	render (640, 480) to "ciclo.html"
+}

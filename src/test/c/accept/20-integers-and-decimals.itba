@@ -1,0 +1,17 @@
+// Literales numéricos enteros y de punto flotante.
+scene "numeros" {
+	camera main at (0, 2.25, 5.0) {
+		look_at (0.0, 0, 0.125)
+		fov 60deg
+	}
+	light l : point at (10, 20.5, 0.001) {
+		color #ffffff
+		intensity 0
+	}
+	material m { color #000000 shininess 1000 }
+	mesh s : sphere at (0, 0, 0) {
+		radius 0.0001
+		material m
+	}
+	render (1, 1) to "numeros.html"
+}

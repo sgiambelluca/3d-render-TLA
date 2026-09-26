@@ -1,0 +1,22 @@
+// Identificadores con guiones bajos, dígitos y prefijos de palabras reservadas.
+scene "identificadores" {
+	camera camara_1 at (0, 2, 5) {
+		look_at _centro
+		fov 60deg
+	}
+	material colores { color #ffffff shininess 1 }
+	material scenery { color #000000 shininess 1 }
+	mesh _centro : sphere at (0, 0, 0) {
+		radius 1
+		material colores
+	}
+	mesh atlas : box at _centro.pos + (2, 0, 0) {
+		size 1
+		material scenery
+	}
+	mesh boxes2 : plane at (0, -1, 0) {
+		size (10, 10)
+		material scenery
+	}
+	render (640, 480) to "identificadores.html"
+}
