@@ -1,0 +1,13 @@
+// Paréntesis anidados que agrupan subexpresiones.
+scene "parentesis" {
+	camera main at ((0), ((2)), (((5)))) {
+		look_at ((0, 0, 0))
+		fov (((60deg)))
+	}
+	material m { color #ffffff shininess (2 + 2) * (3 - 1) }
+	mesh s : sphere at ((0, 1, 0) + (1, 0, 0)) * 2 {
+		radius ((1 + 2) * (3 + 4)) / (2 * (5 + 5))
+		material m
+	}
+	render (640, 480) to "parentesis.html"
+}

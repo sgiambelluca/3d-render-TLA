@@ -1,0 +1,4 @@
+// La cámara es obligatoria.
+scene "a" {
+	render (640, 480) to "x.html"
+}

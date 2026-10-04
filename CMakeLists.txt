@@ -1,6 +1,6 @@
 # Minimum required version fo CMake. Can be modified at your own risk.
 # @see https://cmake.org/download/
-cmake_minimum_required(VERSION 3.28.3)
+cmake_minimum_required(VERSION 3.31.6)
 
 # Name of the project and language to use (C, in this case).
 project(Flex-Bison-Compiler C)
@@ -34,7 +34,6 @@ if (CMAKE_C_COMPILER_ID STREQUAL "GNU")
 	# The header files (*.h extension), are automatically included from the source-codes.
 	add_executable(Flex-Bison-Compiler
 		src/main/c/backend/code-generation/Generator.c
-		src/main/c/backend/domain-specific/Calculator.c
 		src/main/c/EntryPoint.c
 		src/main/c/frontend/Frontend.c
 		src/main/c/frontend/lexical-analysis/FlexActions.c

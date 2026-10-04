@@ -1,0 +1,20 @@
+// (XII) Referencias a entidades declaradas más adelante (Cód. 6.2).
+scene "esfera_lampara" {
+	camera lateral at (3, 2, 4) {
+		look_at pelota
+		fov 50deg
+	}
+	light lampara : point at pelota.pos + (0, 3.5, 0) {
+		color #88aaff
+		intensity 0.8
+	}
+	mesh pelota : sphere at (0, 0.5, 0) {
+		radius 0.7
+		material azul
+	}
+	material azul {
+		color #2e86de
+		shininess 64
+	}
+	render (640, 480) to "esfera.html"
+}

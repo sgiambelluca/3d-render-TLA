@@ -1,0 +1,45 @@
+// (XIII) Posiciones calculadas a partir de la posición y dimensiones de otra entidad (Cód. 6.3).
+scene "mesa_con_jarron" {
+	camera frente at (0, 3, 6) {
+		look_at mesa
+		fov 45deg
+	}
+
+	light sol : directional {
+		direction (-1, -2, -1)
+		color #ffffff
+		intensity 0.9
+	}
+
+	material baldosa { color #d0d0d0 shininess 0 }
+	material madera { color #8b5a2b shininess 8 }
+	material vidrio { color #aee4ff80 shininess 128 } // alpha 50 %
+
+	mesh piso : plane at (0, 0, 0) {
+		size (10, 10)
+		material baldosa
+	}
+
+	mesh mesa : box at piso.pos + (0, 0.5, 0) {
+		size (2, 1, 1)
+		material madera
+	}
+
+	// el jarrón queda apoyado sobre la mesa
+	mesh jarron : sphere
+		at mesa.pos + (0, mesa.size.y / 2 + jarron.radius, 0) {
+		radius 0.25
+		material vidrio
+	}
+
+	// el cubo queda al costado de la mesa, rotado y escalado
+	mesh cubo : box at mesa.pos + (mesa.size.x / 2 + 1, 0, 0) {
+		size 0.5
+		material vidrio
+		rotate (0, 45deg, 0)
+		scale 1.5
+		translate (0, -0.125, 0)
+	}
+
+	render (1920, 1080) to "mesa.html"
+}

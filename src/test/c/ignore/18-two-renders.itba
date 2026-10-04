@@ -1,0 +1,9 @@
+// La configuración de renderizado es única.
+scene "a" {
+	camera main at (0, 2, 5) {
+		look_at (0, 0, 0)
+		fov 60deg
+	}
+	render (640, 480) to "x.html"
+	render (800, 600) to "y.html"
+}

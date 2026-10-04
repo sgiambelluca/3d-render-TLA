@@ -1,0 +1,11 @@
+// El material referenciado debe ser un material.
+scene "a" {
+	camera main at (0, 2, 5) {
+		look_at (0, 0, 0)
+		fov 60deg
+	}
+	material m { color #ffffff shininess 1 }
+	mesh a : sphere at (0, 0, 0) { radius 1 material m }
+	mesh b : sphere at (2, 0, 0) { radius 1 material a }
+	render (640, 480) to "x.html"
+}

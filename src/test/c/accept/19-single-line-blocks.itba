@@ -1,0 +1,8 @@
+// Atributos en la misma línea, sin separadores.
+scene "una_linea" {
+	camera main at (0, 2, 5) { look_at (0, 0, 0) fov 60deg }
+	light sol : directional { direction (0, -1, 0) color #ffffff intensity 1 }
+	material m { color #2e86de shininess 64 }
+	mesh b : sphere at (0, 1, 0) { radius 1 material m }
+	render (640, 480) to "una_linea.html"
+}

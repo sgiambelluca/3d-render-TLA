@@ -1,0 +1,13 @@
+// (VII) Plano finito de ancho y profundidad dados, representando el piso.
+scene "piso" {
+	camera main at (0, 5, 10) {
+		look_at (0, 0, 0)
+		fov 60deg
+	}
+	material baldosa { color #d0d0d0 shininess 0 }
+	mesh piso : plane at (0, 0, 0) {
+		size (10, 6)
+		material baldosa
+	}
+	render (640, 480) to "piso.html"
+}

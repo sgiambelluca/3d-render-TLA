@@ -1,0 +1,8 @@
+scene "a" {
+	camera main at (0, 2, 5) {
+		look_at (0, 0, 0)
+		fov 60deg
+	}
+	material m at (0, 0, 0) { color #ffffff shininess 1 }
+	render (640, 480) to "x.html"
+}

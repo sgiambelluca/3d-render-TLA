@@ -1,0 +1,12 @@
+// Comentarios de línea en cualquier lugar del programa.
+// scene "comentada" { esto no se analiza }
+scene "comentarios" { // al final de una línea
+	// antes de una entidad
+	camera main at (0, 2, 5) { // después de la llave
+		look_at (0, 0, 0) // después de un atributo
+		fov 60deg
+		// antes de cerrar el bloque
+	}
+	render (640, 480) to "comentarios.html" // "esto // tampoco"
+}
+// comentario final sin salto de línea

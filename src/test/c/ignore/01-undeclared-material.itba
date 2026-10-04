@@ -1,0 +1,12 @@
+// 5.2 (I): la malla utiliza un material que no existe.
+scene "a" {
+	camera main at (0, 2, 5) {
+		look_at (0, 0, 0)
+		fov 60deg
+	}
+	mesh b : sphere at (0, 0, 0) {
+		radius 1
+		material inexistente
+	}
+	render (640, 480) to "x.html"
+}

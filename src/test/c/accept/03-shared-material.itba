@@ -1,0 +1,21 @@
+// (III) Dos o más mallas distintas utilizan el mismo material.
+scene "material_compartido" {
+	camera main at (0, 2, 8) {
+		look_at (0, 0, 0)
+		fov 60deg
+	}
+	material gris { color #888888 shininess 16 }
+	mesh izquierda : sphere at (-2, 0.5, 0) {
+		radius 0.5
+		material gris
+	}
+	mesh centro : box at (0, 0.5, 0) {
+		size 1
+		material gris
+	}
+	mesh derecha : sphere at (2, 0.5, 0) {
+		radius 0.5
+		material gris
+	}
+	render (640, 480) to "compartido.html"
+}

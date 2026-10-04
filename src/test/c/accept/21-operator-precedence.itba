@@ -1,0 +1,13 @@
+// Precedencia y asociatividad: * y / antes que + y -, todas asociativas a izquierda.
+scene "precedencia" {
+	camera main at (1 + 2 * 3 - 4 / 2, 10 - 4 - 3, 8 / 2 / 2) {
+		look_at (0, 0, 0)
+		fov 30deg + 15deg * 2
+	}
+	material m { color #ffffff shininess 2 * 8 + 1 }
+	mesh s : sphere at (0, 1, 0) {
+		radius 1 / 2 + 0.25 * 2
+		material m
+	}
+	render (640 * 2, 480 * 2) to "precedencia.html"
+}

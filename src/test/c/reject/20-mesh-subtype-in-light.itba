@@ -1,0 +1,11 @@
+scene "a" {
+	camera main at (0, 2, 5) {
+		look_at (0, 0, 0)
+		fov 60deg
+	}
+	light l : sphere at (0, 4, 0) {
+		color #ffffff
+		intensity 1
+	}
+	render (640, 480) to "x.html"
+}

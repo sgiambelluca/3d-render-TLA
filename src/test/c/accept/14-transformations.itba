@@ -1,0 +1,18 @@
+// (XIV) Traslación, rotación y escalado sobre una malla (se aplican en orden).
+scene "transformaciones" {
+	camera main at (0, 3, 6) {
+		look_at caja
+		fov 60deg
+	}
+	material rojo { color #c0392b shininess 32 }
+	mesh caja : box at (0, 0.5, 0) {
+		size (1, 1, 2)
+		material rojo
+		translate (1, 0, 0)
+		rotate (0, 30deg, 0)
+		scale (1, 2, 1)
+		translate (0, 0.5, -1)
+		scale 0.5
+	}
+	render (800, 600) to "transformaciones.html"
+}

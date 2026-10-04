@@ -1,0 +1,8 @@
+// (IX) Cámara con un campo de visión cercano al límite superior (179°).
+scene "gran_angular" {
+	camera ojo_de_pez at (0, 1, 1) {
+		look_at (0, 0, 0)
+		fov 179deg
+	}
+	render (640, 480) to "gran_angular.html"
+}
