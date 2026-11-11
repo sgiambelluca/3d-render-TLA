@@ -11,11 +11,10 @@ typedef struct {
 	 */
 	void * abstractSyntaxtTree;
 
-	// TODO: Add a symbol table.
-	// TODO: Add an stack to handle nested scopes.
-	// TODO: Add more configuration.
-	// TODO: Add whatever you need.
-	// TODO: ...
+	/**
+	 * The scene resolved by the semantic analysis, with its final values.
+	 */
+	void * scene;
 } CompilerState;
 
 #endif
