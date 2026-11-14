@@ -1,0 +1,10 @@
+// Una entidad no es un valor aritmetico.
+scene "a" {
+	camera main at (0, 2, 5) {
+		look_at (0, 0, 0)
+		fov 60deg
+	}
+	mesh a : sphere { radius 1 }
+	mesh b : sphere at a + (1, 0, 0) { radius 1 }
+	render (640, 480) to "x.html"
+}

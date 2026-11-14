@@ -12,6 +12,11 @@ RED='\033[0;31m'
 STATUS=0
 YELLOW='\033[0;33m'
 
+# The generated documents go to a temporary directory, to keep the repository clean.
+OUTPUT_DIRECTORY="$(mktemp -d)"
+export OUTPUT_DIRECTORY
+trap 'rm --force --recursive "$OUTPUT_DIRECTORY"' EXIT
+
 echo "Compiler will ignore these tests:"
 echo ""
 
