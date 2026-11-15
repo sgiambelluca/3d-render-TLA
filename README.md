@@ -47,12 +47,12 @@ scene "mesa_con_jarron" {
 
 Set the following environment variables to control and configure the behaviour of the application:
 
-| Name                  | Default | Description                                                                                                                                                           |
-| :-------------------- | :-----: | :-------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| `ENVIRONMENT`         | `Local` | The active environment name. The available environments are: `Local`, `Development` and `Production`.                                                                 |
-| `LOG_IGNORED_LEXEMES` | `true`  | When `true`, logs all of the ignored lexemes found with Flex at `DEBUGGING` level. To remove those logs from the console output set it to `false`.                    |
-| `LOGGING_LEVEL`       | `ALL`   | The minimum level to log in the console output. From lower to higher, the available levels are: `ALL`, `DEBUGGING`, `INFORMATION`, `WARNING`, `ERROR` and `CRITICAL`. |
-| `OUTPUT_DIRECTORY`    | `.`     | The directory of the generated HTML file: the path in `render ... to "<file>"` is relative to it. Missing subdirectories are created.                                 |
+| Name                  | Default       | Description                                                                                                                                                                                                                   |
+| :-------------------- | :-----------: | :---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `ENVIRONMENT`         | `Local`       | The active environment name. The available environments are: `Local`, `Development` and `Production`.                                                                                                                         |
+| `LOG_IGNORED_LEXEMES` | `true`        | When `true`, logs all of the ignored lexemes found with Flex at `DEBUGGING` level. To remove those logs from the console output set it to `false`.                                                                            |
+| `LOGGING_LEVEL`       | `INFORMATION` | The minimum level to log in the console output. From lower to higher, the available levels are: `ALL`, `DEBUGGING`, `INFORMATION`, `WARNING`, `ERROR` and `CRITICAL`. Use `ALL` to see the debugging messages of every phase. |
+| `OUTPUT_DIRECTORY`    | `.`           | The directory of the generated HTML file: the path in `render ... to "<file>"` is relative to it. Missing subdirectories are created.                                                                                         |
 
 _Docker Compose_ can read the variables from an `.env` file too (see `compose.yaml` file).
 
