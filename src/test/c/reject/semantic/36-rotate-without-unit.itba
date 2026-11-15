@@ -1,0 +1,9 @@
+// Las rotaciones son angulos (solo 0 puede no tener unidad).
+scene "a" {
+	camera main at (0, 2, 5) {
+		look_at (0, 0, 0)
+		fov 60deg
+	}
+	mesh a : box { size 1 rotate (0, 45, 0) }
+	render (640, 480) to "x.html"
+}

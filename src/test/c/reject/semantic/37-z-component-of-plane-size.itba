@@ -1,0 +1,10 @@
+// El tamano de un plano tiene 2 componentes.
+scene "a" {
+	camera main at (0, 2, 5) {
+		look_at (0, 0, 0)
+		fov 60deg
+	}
+	mesh piso : plane { size (2, 2) }
+	mesh a : box { size piso.size.z }
+	render (640, 480) to "x.html"
+}

@@ -30,10 +30,29 @@ if (CMAKE_C_COMPILER_ID STREQUAL "GNU")
 		DEPENDS ../src/main/c/frontend/syntactic-analysis/BisonParser.c ../src/main/c/frontend/syntactic-analysis/BisonParser.h
 	)
 
+	# Embeds the JavaScript runtime in the binary, as a null-terminated string. It's generated again
+	# when the runtime changes, because that file is a dependency of the configuration.
+	set(RUNTIME_SOURCE ${CMAKE_SOURCE_DIR}/src/main/javascript/Runtime.js)
+	set(RUNTIME_OUTPUT ${CMAKE_BINARY_DIR}/generated/Runtime.c)
+	set_property(DIRECTORY APPEND PROPERTY CMAKE_CONFIGURE_DEPENDS ${RUNTIME_SOURCE})
+	file(READ ${RUNTIME_SOURCE} RUNTIME_HEXADECIMAL HEX)
+	string(REGEX REPLACE "([0-9a-f][0-9a-f])" "0x\\1, " RUNTIME_BYTES "${RUNTIME_HEXADECIMAL}")
+	file(WRITE ${RUNTIME_OUTPUT} "const char runtime[] = { ${RUNTIME_BYTES}0x00 };\n")
+	# The bytes above 0x7F (non-ASCII characters) are valid, even if a "char" is signed.
+	set_source_files_properties(${RUNTIME_OUTPUT} PROPERTIES COMPILE_OPTIONS -Wno-overflow)
+
 	# Defines the entry-point of the application, and the source-codes (*.c extension).
 	# The header files (*.h extension), are automatically included from the source-codes.
 	add_executable(Flex-Bison-Compiler
+		${RUNTIME_OUTPUT}
 		src/main/c/backend/code-generation/Generator.c
+		src/main/c/backend/semantic-analysis/AttributeResolver.c
+		src/main/c/backend/semantic-analysis/Matrix.c
+		src/main/c/backend/semantic-analysis/Scene.c
+		src/main/c/backend/semantic-analysis/SemanticAnalyzer.c
+		src/main/c/backend/semantic-analysis/SemanticError.c
+		src/main/c/backend/semantic-analysis/SymbolTable.c
+		src/main/c/backend/semantic-analysis/Value.c
 		src/main/c/EntryPoint.c
 		src/main/c/frontend/Frontend.c
 		src/main/c/frontend/lexical-analysis/FlexActions.c
@@ -49,7 +68,7 @@ if (CMAKE_C_COMPILER_ID STREQUAL "GNU")
 	)
 
 	# Link final project and libraries.
-	target_link_libraries(Flex-Bison-Compiler)
+	target_link_libraries(Flex-Bison-Compiler m)
 else ()
 	message(NOTICE "The C compiler is unknown.")
 endif ()
